@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="1e903cf7-95c7-4f43-bfe7-01f387fe342d">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="idAsignacion" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="obra" class="java.lang.String"/>
+	<parameter name="encargado" class="java.lang.String"/>
+	<parameter name="fechaAsignacion" class="java.lang.String"/>
+	<parameter name="codigo" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT
+     detalleAsignar.`cantidad` AS detalleAsignar_cantidad,
+     material.`nombreMaterial` AS material_nombreMaterial
+FROM
+     `obra` obra INNER JOIN `asignar` asignar ON obra.`idObra` = asignar.`idObra`
+     INNER JOIN `detalleAsignar` detalleAsignar ON asignar.`idAsignacion` = detalleAsignar.`idAsignacion`
+     INNER JOIN `material` material ON detalleAsignar.`idMaterial` = material.`idMaterial`
+WHERE
+     asignar.idAsignacion = $P{idAsignacion}
+ORDER BY
+     `material`.`nombreMaterial` ASC]]>
+	</queryString>
+	<field name="detalleAsignar_cantidad" class="java.lang.Integer"/>
+	<field name="material_nombreMaterial" class="java.lang.String"/>
+	<background>
+		<band/>
+	</background>
+	<title>
+		<band height="151">
+			<frame>
+				<reportElement mode="Opaque" x="-20" y="-20" width="595" height="171" backcolor="#006699" uuid="a5e008da-df97-4615-84f5-65a371b2a73a"/>
+				<staticText>
+					<reportElement x="25" y="110" width="309" height="20" forecolor="#FFFFFF" uuid="1fdeb6b3-e683-4b7a-9131-4e74b05b876d"/>
+					<text><![CDATA[Telefono: 0424 - 2343124 Telefono: 0426 - 234215]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="25" y="37" width="282" height="53" forecolor="#FFFFFF" uuid="9c29c696-bc04-40b3-aed2-e7f62b8b5d45"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Proyectos y desarrollo de urbanismo, Construcciones, Diseño y desarrollo de todo tipo de instalaciones y obras civiles, Servicios y mantenimiento en general.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="25" y="90" width="321" height="20" forecolor="#FFFFFF" uuid="42d405cb-64c3-4097-bdbb-255d89e64a86"/>
+					<text><![CDATA[Edif. Oficentro El Quinteto piso 7 Ofic 7-A Valencia - Carabobo]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="25" y="130" width="309" height="20" forecolor="#FFFFFF" uuid="c7604586-62c7-48c3-8e0b-fe411fbc305e"/>
+					<text><![CDATA[Correo: Obyhat@gmail.com   Correo: Obyhat@hotmail.com]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="25" y="17" width="282" height="20" forecolor="#FFFFFF" uuid="a48cc77d-b5d0-4860-a5f9-9d2ee9e414f6"/>
+					<textElement>
+						<font size="12" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Proyectos y Construcciones Obyhat C.A]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="94">
+			<textField>
+				<reportElement x="103" y="10" width="100" height="20" uuid="ca66d571-48cf-4c64-9230-0091f1a43cdf"/>
+				<textFieldExpression><![CDATA[$P{obra}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="103" y="38" width="100" height="20" uuid="fe763c8b-634c-4164-b23d-90e5b09732e7"/>
+				<textFieldExpression><![CDATA[$P{encargado}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="452" y="10" width="100" height="20" uuid="1cf4928e-7eb8-4b51-8cfd-989efebc7796"/>
+				<textFieldExpression><![CDATA[$P{fechaAsignacion}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="3" y="67" width="100" height="20" uuid="2b354de3-e3fc-4849-8d16-d9d5a127ec03"/>
+				<text><![CDATA[Codigo asignacion:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="340" y="10" width="112" height="20" uuid="d81f53cb-d143-423f-a7a6-8d14e9db552f"/>
+				<text><![CDATA[Fecha de asignacion:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="3" y="10" width="100" height="20" uuid="f4ad246b-43b1-47aa-a097-e2b217af9105"/>
+				<text><![CDATA[Obra:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="3" y="38" width="100" height="20" uuid="a7b9b3bf-b9ce-47bf-adc7-15e824ed92f1"/>
+				<text><![CDATA[Encargado:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="103" y="67" width="100" height="20" uuid="e5aafb3a-6520-471d-89a9-73cbfcc273ca"/>
+				<textFieldExpression><![CDATA[$P{codigo}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="21">
+			<line>
+				<reportElement x="-20" y="20" width="595" height="1" forecolor="#666666" uuid="c32b78f0-0265-46d6-9c05-7b53c45b7891"/>
+			</line>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="0" width="277" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="b0eb8bd2-907b-46a3-b39a-53570f46209c"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nombre]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="277" y="0" width="277" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="98efbfdf-d67a-4677-ab6d-5655d81c7f09"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Cantidad]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="19" width="555" height="1" uuid="bdd92f4b-8c6b-4615-91b9-98aeae61a239"/>
+			</line>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="45" y="0" width="189" height="20" uuid="381df87a-6dea-453b-9a43-730d6a642675"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{material_nombreMaterial}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="326" y="0" width="179" height="20" uuid="b165e020-a147-4f49-bac1-61f2701550e1"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{detalleAsignar_cantidad}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band/>
+	</columnFooter>
+	<pageFooter>
+		<band height="17">
+			<textField>
+				<reportElement mode="Opaque" x="0" y="4" width="515" height="13" backcolor="#E6E6E6" uuid="4c085da5-fff7-4ec1-b475-3cba068b3d10"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement mode="Opaque" x="515" y="4" width="40" height="13" backcolor="#E6E6E6" uuid="7c59da65-07c0-4249-ba49-bc201b87b2c6"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="0" y="4" width="100" height="13" uuid="947a78f6-972f-4e48-a4ee-0c59e4f2ef6d"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band/>
+	</summary>
+</jasperReport>

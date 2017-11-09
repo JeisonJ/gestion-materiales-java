@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="c1b0676d-76f9-4802-9d4a-b03ba1b55354">
+	<property name="ireport.zoom" value="1.2100000000000006"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     material.`nombreMaterial` AS material_nombreMaterial,
+     material.`cantidadMaterial` AS material_cantidadMaterial,
+     material.`fechaRegistro` AS material_fechaRegistro
+FROM
+     `material` material]]>
+	</queryString>
+	<field name="material_nombreMaterial" class="java.lang.String"/>
+	<field name="material_cantidadMaterial" class="java.lang.Integer"/>
+	<field name="material_fechaRegistro" class="java.sql.Date"/>
+	<background>
+		<band/>
+	</background>
+	<title>
+		<band height="140">
+			<frame>
+				<reportElement mode="Opaque" x="0" y="0" width="555" height="140" backcolor="#CCCCCC" uuid="694007be-9ac7-4960-827d-0ab09cfd9928"/>
+				<staticText>
+					<reportElement x="0" y="0" width="312" height="20" uuid="f86493cd-155e-40df-9059-4b4786bd6167"/>
+					<textElement>
+						<font size="12" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Proyectos y Construcciones Obyhat C.A]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="0" y="20" width="282" height="53" uuid="4fb83531-63f4-48a0-bed2-04c2d34d3f25"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Proyectos y desarrollo de urbanismo, Construcciones, Diseño y desarrollo de todo tipo de instalaciones y obras civiles, Servicios y mantenimiento en general.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="0" y="73" width="328" height="20" uuid="0db3c179-e1c9-44ff-88b5-a889e034b2e6"/>
+					<text><![CDATA[Edif. Oficentro El Quinteto piso 7 Ofic 7-A Valencia - Carabobo]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="0" y="93" width="312" height="20" uuid="88c94ec9-c59d-47fe-87d7-d38e9580714f"/>
+					<text><![CDATA[Telefono: 0424 - 2343124 Telefono: 0426 - 234215]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="0" y="113" width="328" height="20" uuid="18c587af-6f57-4756-a26b-9caa3c35b71d"/>
+					<text><![CDATA[Correo: Obyhat@gmail.com   Correo: Obyhat@hotmail.com]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="34">
+			<staticText>
+				<reportElement x="0" y="14" width="555" height="20" uuid="10dedb50-c8cf-459b-818b-4012e3bafab4"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Lista de Materiales]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="21">
+			<line>
+				<reportElement x="-20" y="20" width="595" height="1" forecolor="#666666" uuid="74ddb3a5-94ea-4c37-88df-1cfdc278761c"/>
+			</line>
+			<staticText>
+				<reportElement x="15" y="1" width="113" height="20" uuid="8407847f-efdd-4651-a0eb-ffc478318615"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Nombre de Material]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="195" y="0" width="133" height="20" uuid="2c70e434-b5e6-4b20-87bc-5baaa9ea7aeb"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Cantidad de Material]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="388" y="1" width="100" height="20" uuid="910ee771-c5a5-40de-8a41-e80492720813"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Fecha de llegada]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="29">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="19" width="555" height="1" uuid="2117c9c3-0b75-4733-9a6f-0860016656e4"/>
+			</line>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="0" y="0" width="185" height="20" uuid="7b836926-bf80-4c16-925b-1fb39131e6b4"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{material_nombreMaterial}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="203" y="0" width="185" height="20" uuid="c69418d2-ee4c-417d-9f29-98ed1792f508"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{material_cantidadMaterial}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="370" y="0" width="185" height="20" uuid="726680e9-b506-4e4b-975b-67aae8e63e59"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{material_fechaRegistro}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band/>
+	</columnFooter>
+	<pageFooter>
+		<band height="95">
+			<textField>
+				<reportElement mode="Opaque" x="0" y="4" width="515" height="13" backcolor="#E6E6E6" uuid="8b71b9f4-7f21-4592-87d2-9cc5af2ce835"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement mode="Opaque" x="515" y="4" width="40" height="13" backcolor="#E6E6E6" uuid="320e32bb-c3b4-47fc-80f6-707857af051c"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="0" y="4" width="100" height="13" uuid="6aafd146-252f-4b94-a35e-1d8d509a26a9"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band/>
+	</summary>
+</jasperReport>
